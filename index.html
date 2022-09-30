@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortSwatfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#ho" class="active" >Home</a></li>
+            <li><a href="#wo" >Work</a></li>
+            <li><a href="#ab" >About</a></li>
+            <li><a href="#co" >Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" id="stars">
+        <div class="mousecontainer">    
+            <h2 class="object" id="text1" data-value="3">Hey, I'm Swathy</h2>
+            <h3 class="object" id="text2" data-value="3">frontEnd Developer and Designer</h3>
+            <img src="images/plane1.png" class="object" data-value="8" id="plane1">
+            <img src="images/smallplanet.png" class="object" data-value="7" id="astropwoli">
+            <img src="images/astro2.png" class="object" data-value="10" id="astro">
+            <img src="images/girl6.png" class="object" data-value="5" id="fgirl">
+            
+            
+            
+        </div>
+
+        <div class="container glass">
+            <h4 id="wo" >Work</h4>
+            <p>Designed digital posters, Was department Magazine Editor, Created posters, designed websites</p>
+            <h4 id="ab">About</h4>
+            <p>Myself is Swathy Stanley, I do Graphic designing, Illustration, UI design and lot more
+                (note:lot more is short for trying to learn, just that!). I'm currently beginning a marvellous journey to ma third year in engineering
+                (evergreen professional course) which is obviously close to fourth year where i hopefully graduate 
+                to begin a work live die phase or change the world(everyone says that right?)<br>
+                Also I work as women in comuputing coordinator in cs sb geci which is really cool,keeps me responsible for the things i do, gives me a chance to empower the women out there in technical skills etc,etc(you know).  <br>
+                well,thats about me and what i think of me in few words, 
+                <br> For any of the above mentioned or not mentioned works--I'm available, contact me in below mentioned ways.
+                  </p>
+            <h4 id="co">Contact</h4>
+            <p>For any queries or work feel free to contact me,<br>email:swathycool@gmail.com <br>Phone: 9181323556 </p>
+            
+        </div>
+
+
+    </section>
+
+    <!-- <div class="section2"> -->
+       
+        
+     <!--   <img src="images/rocket1.png" class="object" data-value="4" id="astropwoli">
+        
+     </div> -->
+        
+        
+       
+    
+
+    <script>
+        let stars= document.getElementById('stars');
+        
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value* 0.15+ 'px';
+            
+            
+        })
+    </script>
+
+    <script type="text/javascript">
+        document.addEventListener("mousemove",parallax);
+        function parallax(e){
+            document.querySelectorAll(".object").forEach(function(move){
+                var moving_value=move.getAttribute("data-value");
+                var x = (e.clientX*moving_value)/100;
+                var y = (e.clientY*moving_value)/100;
+
+                move.style.transform = "translateX("+x+"px) translateY("+y+"px)";
+            })
+        }
+    </script>
+</body>
+</html>
